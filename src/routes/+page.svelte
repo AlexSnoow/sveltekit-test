@@ -1,3 +1,12 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<p> еще текст</p>
+<script>
+    // логику можно добавить здесь
+</script>
+
+<svelte:head>
+    <title>Главная страница</title>
+</svelte:head>
+
+<main>
+    <h1>Добро пожаловать в SvelteKit</h1>
+    <p>Это главная страница вашего сайта</p>
+</main>

@@ -1,13 +1,26 @@
-import adapter from '@sveltejs/adapter-auto';
+// файл svelte.config.js
+import adapter from '@sveltejs/adapter-static';
 
-/** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
-		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
-		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
-		adapter: adapter()
-	}
+  kit: {
+    // Использование static адаптера для генерации статических файлов
+    adapter: adapter({
+      // Важные опции для адаптера-статик
+      pages: 'build',    // Укажите директорию для сгенерированных html-файлов
+      assets: 'build',   // Укажите директорию для сгенерированных ассетов
+	    fallback: undefined,
+	    precompress: false,
+	    strict: true,
+      tralilingSlash: 'ignore'
+	//   fallback: 'index.html' // Укажите файл fallback, например 'index.html'
+	  
+    
+    }),
+    prerender: {
+      // Укажите маршруты для предварительного рендеринга
+      	entries: ['*']
+    }
+  }
 };
 
 export default config;
