@@ -2,9 +2,12 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import postcss from 'postcss';
+import json from '@rollup/plugin-json';
 
 export default defineConfig({
-	plugins: [sveltekit()],
+	plugins: [
+		sveltekit(),
+		json()],
 	css: {
 		postcss
 	},
